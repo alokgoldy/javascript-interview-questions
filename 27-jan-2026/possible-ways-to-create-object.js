@@ -59,4 +59,12 @@ const obj5 = Object.create(vehicle);
 
 // 🚀 5. Using class syntax (ES6+)
 
+class Man {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const object = new Man("Sudheer");
+
 console.log(obj5.wheels);
