@@ -27,8 +27,36 @@ function Person(name) {
     this.age = 21;
 }
 const obj4 = new Person('alok goldy');
+
 // 🚀 4. Using Object.create()
+
+let vehicle = {
+  wheels: "4",
+  fuelType: "Gasoline",
+  color: "Green",
+};
+
+let carProps = {
+  type: {
+    value: "Volkswagen",
+  },
+  model: {
+    value: "Golf",
+  },
+};
+
+let mobileProps = {
+  type: {
+    value: "Apple",
+  },
+  model: {
+    value: "18",
+  },
+};
+
+const obj5 = Object.create(vehicle);
+
 
 // 🚀 5. Using class syntax (ES6+)
 
-console.log(obj, obj2, obj3, obj4);
+console.log(obj5.wheels);
