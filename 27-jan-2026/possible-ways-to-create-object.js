@@ -67,4 +67,30 @@ class Man {
 
 const object = new Man("Sudheer");
 
+// 🚀 6. Singleton pattern:
+
+const Singleton = (function () {
+let instance;
+
+function createInstance() {
+  return { name: "Sudheer" };
+}
+
+return {
+  getInstance: function () {
+    if (!instance) {
+      instance = createInstance();
+    }
+    return instance;
+  }
+};
+})();
+
+// Usage
+const sobj1 = Singleton.getInstance();
+const sobj2 = Singleton.getInstance();
+
+console.log(sobj1 === sobj2); // true
+
+
 console.log(obj5.wheels);
