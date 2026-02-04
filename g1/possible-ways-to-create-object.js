@@ -143,5 +143,62 @@ console.log('robj3', robj3);
 // Object('alok') === 'alok';     // false
 // new Object('alok') === 'alok'; // false
 
+// ❌ Expecting own property
+// const obj = Object.create({ a: 1 });
+// obj.hasOwnProperty('a'); // false
 
 
+// Because a is on the prototype.
+
+// 4 
+
+// The create method of Object is used to create a new object by passing the specified prototype object and properties as arguments, i.e.,
+// this pattern is helpful to create new objects based on existing objects.
+// In other words, this is useful for setting up prototypal inheritance. 
+// The second argument is optional and it is used to create properties on a newly created object.
+
+var object11 = Object.create(null);
+
+let vehicle12 = {
+  wheels: "4",
+  fuelType: "Gasoline",
+  color: "Green",
+};
+
+let carProps12 = {
+  type: {
+    value: "Volkswagen",
+    enumerable: true
+  },
+  model: {
+    value: "Golf",
+    enumerable: true
+  }
+};
+
+const car2 = Object.create(vehicle12, carProps12);
+console.log('hereree---', car2);
+
+
+// Define the prototype object
+var vehicle11 = {
+    wheels: 4,
+    drive() {
+        return 'driving';
+    }
+};
+
+// Define properties with descriptors
+var carProps11 = {
+    brand: {
+        value: 'Toyota',
+        writable: true,
+        enumerable: true,
+        configurable: true
+    }
+};
+
+var car22 = Object.create(vehicle11, carProps11);
+console.log(car22);  // { brand: 'Toyota' }
+console.log(car22.wheels);  // 4 (inherited from vehicle1)
+console.log(car22.drive());  // 'driving'
