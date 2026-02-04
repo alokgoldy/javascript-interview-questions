@@ -7,6 +7,11 @@ const obj = {
     role: 'js dev'
 }
 
+const mobj = {
+  name: 'alok',
+  role: 'js dev'
+}
+// console.log('mobj', mobj);
 // 🚀 2. Using the Object constructor
 
 // The simplest way to create an empty object is using the Object constructor. Currently this approach is not recommended.
@@ -18,6 +23,7 @@ obj2.name = 'rahul';
 
 const obj3 =  Object();
 obj3.name = 'ravi';
+
 
 
 // 🚀 3. Using the new keyword with a constructor function
@@ -90,7 +96,52 @@ return {
 const sobj1 = Singleton.getInstance();
 const sobj2 = Singleton.getInstance();
 
-console.log(sobj1 === sobj2); // true
+// console.log(sobj1 === sobj2); // true
 
 
-console.log(obj5.wheels);
+// console.log(obj5.wheels);
+
+
+// -------Revision------------------Revision------------------Revision------------------Revision------------------Revision-----------
+
+
+// 1.
+
+const robj = {
+  name: 'alok',
+  role: 'js dev'
+}
+
+console.log('robj', robj);
+
+// 2
+
+const robj2 = Object();
+
+robj2.name = 'alok';
+robj2.role = 'no role';
+
+console.log('robj2', robj2);
+
+// 3
+
+const robj3 = new Object();
+
+robj3.name = 'alok3';
+robj3.role = 'js dev 3';
+
+console.log('robj3', robj3);
+
+// | Input                  | `Object(value)`     | `new Object(value)` |
+// | ---------------------- | ------------------- | ------------------- |
+// | `Object()`             | `{}`                | `{}`                |
+// | `Object({})`           | returns same object | new object          |
+// | `Object(5)`            | `Number {5}`        | `Number {5}`        |
+// | Conversion role        | ✔ yes               | ❌ no                |
+// | Explicit instantiation | ❌                   | ✔                   |
+
+// Object('alok') === 'alok';     // false
+// new Object('alok') === 'alok'; // false
+
+
+
