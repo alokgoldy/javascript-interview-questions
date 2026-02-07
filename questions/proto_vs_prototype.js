@@ -53,3 +53,44 @@ const val2 = Object.setPrototypeOf(child, grandParent);
 
 const val4 = child.hasOwnProperty('a');
 console.log(val4);
+
+
+
+
+
+function Person(name) {
+  this.name = name;
+}
+
+function Employee(name, id) {
+  Person.call(this, name); // reuse constructor
+  this.id = id;
+}
+
+Employee.prototype = Object.create(Person.prototype);
+
+const e = new Employee("Alok", 101);
+
+console.log(e);
+console.log(e instanceof Person);
+console.log(e instanceof Employee);
+
+
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Person.prototype.sayHi = function () {
+//   console.log("Hi, I'm " + this.name);
+// };
+
+// function Employee(name, id) {
+//   Person.call(this, name);
+//   this.id = id;
+// }
+
+// Employee.prototype = Object.create(Person.prototype);
+// Employee.prototype.constructor = Employee;
+
+// const e = new Employee("Alok", 101);
+// e.sayHi(); // Hi, I'm Alok
