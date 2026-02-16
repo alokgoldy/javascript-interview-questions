@@ -16,6 +16,6 @@ function Welcome(name) {
     return greetingInfo;
 }
 
-var g = new Welcome('alok');
+var g = Welcome('alok');
 
 g('hi');
