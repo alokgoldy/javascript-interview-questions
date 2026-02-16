@@ -76,3 +76,12 @@ function useApi({ url, method = 'GET', body = null, headers = {}, immediate = tr
 
 export default useApi;
 
+// 🔥 useInfiniteScroll
+
+// 🔥 useIntersectionObserver
+
+// 🔥 useDebouncedCallback
+
+// 🔥 usePrevious
+
+// 🔥 Or a mini React Query implementation in JS
