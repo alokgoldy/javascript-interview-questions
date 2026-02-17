@@ -25,7 +25,6 @@ function useApi({ url, method = 'GET', body = null, headers = {}, immediate = tr
         abortControllerRef.current = controller;
 
         try {
-
             const response = await fetch(url, {
                 method,
                 body: body ? JSON.stringify(body) : null,
