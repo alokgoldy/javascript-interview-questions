@@ -21,4 +21,14 @@ body {
   gap: 16px;
   padding: 24px;
 }
-
+.infinite-scroll-container {
+  height: 70vh;
+  width: 100%;
+  max-width: 640px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  background: #fff;
+}
