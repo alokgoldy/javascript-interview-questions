@@ -27,15 +27,13 @@ function InfiniteScroll() {
          <h1>Infinite Scroll</h1>
          <div ref={containerRef} className='infinite-scroll-container'>
             <ul>
-               {items.map((item, i) => {
-                  <li key={i}>
-                   {item}
-                  </li>
-               })}
+               {items.map((item, i) => (
+                  <li key={i}>{item}</li>
+               ))}
             </ul>
+            <div ref={sentinelRef} style={{ height: 8 }}/>
+            {!hasMore && <div className='no-more-items'>No more items</div>}
          </div>
-         <div ref={sentinelRef} style={{ height: 8 }}/>
-         {!hasMore && <div className='no-more-items'>No more items</div>}
       </div>
    )
 }
