@@ -58,6 +58,7 @@ const valReduce = arr.myReduce((acc, crr) => acc + crr, 0);
 console.log('reduce sum -> ', valReduce);
 
 
+// for each
 
 if (!Array.prototype.myForEach) {
     Array.prototype.myForEach = function (callback) {
@@ -70,3 +71,19 @@ if (!Array.prototype.myForEach) {
 arr.myForEach(num => {
     console.log('my num -> ', num);
 })
+
+//find function
+
+
+if (!Array.prototype.myFind) {
+    Array.prototype.myFind = function (callback) {
+        for (let i = 0; i < this.length; i++) {
+            if (callback(this[i], i, this)) {
+                return this[i];
+            }
+        }
+    }
+}
+
+const valFind = arr.myFind(i => i === 3);
+console.log('my find finction ->', valFind);
