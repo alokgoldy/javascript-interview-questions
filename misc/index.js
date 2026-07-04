@@ -1,43 +1,87 @@
-const person = {
-    greet() {
-        return `Hello this is ${this.name}`;
-    }
+// const person = {
+//     greet() {
+//         return `Hello this is ${this.name}`;
+//     }
+// }
+
+// const user = Object.create(person);
+// user.name = 'Alok Goldy';
+// console.log(user);
+// console.log(user.greet());
+
+
+
+// // Object.create vs class
+
+// const animal = {
+//     speak() {
+//         return 'sound';
+//     }
+// }
+
+// const dog = Object.create(animal);
+// console.log('1-', dog.speak())
+// dog.speak = function () {
+//     return 'bark';
+// }
+// console.log('2-', dog.speak())
+
+// // Using class
+
+// class Animal {
+//     speak() {
+//         return 'sound-bhow';
+//     }
+// }
+
+// class Dog extends Animal {
+//     // speak() {
+//     //     return 'bark'
+//     // }
+// }
+// const myDog = new Dog();
+// console.log(myDog.speak());
+
+
+// to make object in javascript
+
+const obj = {
+    name: 'Alok',
+    roll: 22
 }
 
-const user = Object.create(person);
-user.name = 'Alok Goldy';
-console.log(user);
-console.log(user.greet());
+const obj1 = new Object();
 
+const obj2 = Object.create(null);
 
+let vehicle = {
+  wheels: "4",
+  fuelType: "Gasoline",
+  color: "Green",
+};
+let carProps = {
+  type: {
+    value: "Volkswagen",
+  },
+  model: {
+    value: "Golf",
+  },
+};
 
-// Object.create vs class
+var car = Object.create(vehicle, carProps);
 
-const animal = {
-    speak() {
-        return 'sound';
-    }
+function Person(name){
+    this.name = name;
+    this.age = 21;
 }
 
-const dog = Object.create(animal);
-console.log('1-', dog.speak())
-dog.speak = function () {
-    return 'bark';
-}
-console.log('2-', dog.speak())
+const obj3 = new Person('sudheer')
 
-// Using class
+console.log(car);
 
-class Animal {
-    speak() {
-        return 'sound-bhow';
-    }
-}
-
-class Dog extends Animal {
-    // speak() {
-    //     return 'bark'
-    // }
-}
-const myDog = new Dog();
-console.log(myDog.speak());
+console.log('alok', {
+    obj,
+    obj1,
+    obj2,
+    obj3
+})
