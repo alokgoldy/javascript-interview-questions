@@ -204,3 +204,46 @@ if (!Array.prototype.myFilter) {
 
 const filval = parr.myFilter(i => i > 2);
 console.log(filval);
+
+
+if (!Array.prototype.myFilter2) {
+    Array.prototype.myFilter2 = function (callback) {
+        let result = [];
+
+        for (let i = 0; i < this.length; i++) {
+            if (callback(this[i], i, this)) {
+                result.push(this[i]);
+            }
+        }
+        return result;
+    }
+}
+
+const filArray = [3, 7, 8, 99, 55, 44, 66, 31];
+
+const valfil = filArray.myFilter2(i => i % 2 === 0);
+
+console.log('filter val ', valfil);
+
+
+if (!Array.prototype.myReduce) {
+    Array.prototype.myReduce = function (callback, initialValue) {
+        let accum = initialValue;
+        let startIndex = 0;
+
+        if (accum === undefined) {
+            accum = this[0];
+            startIndex = 1;
+        }
+
+        for (let i = startIndex; i < this.length; i++) {
+            accum = callback(accum, this[i], i, this);
+        }
+
+        return accum;
+    }
+}
+
+const redval = filArray.myReduce((acc, crr) => acc + crr, 0);
+
+console.log('redval->>', redval);
