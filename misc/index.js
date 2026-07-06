@@ -186,3 +186,21 @@ if (!Array.prototype.myMap2) {
         return result;
     }
 }
+
+if (!Array.prototype.myFilter) {
+    Array.prototype.myFilter = function (callback) {
+        let result = [];
+
+        for (let i = 0; i < this.length; i++) {
+            if (callback(this[i], i, this)) {
+                result.push(this[i]);
+            }
+
+        }
+
+        return result;
+    }
+}
+
+const filval = parr.myFilter(i => i > 2);
+console.log(filval);
