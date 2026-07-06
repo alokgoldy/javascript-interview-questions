@@ -111,7 +111,7 @@ console.log(mp, {
     goldy: mp.get('goldy')
 });
 
-const fn1 = (a) => (b) => (c) => console.log(a+b+c);
+const fn1 = (a) => (b) => (c) => console.log(a + b + c);
 fn1(1)(1)(1);
 
 
@@ -124,3 +124,34 @@ console.log({
     encoded_uri,
     decoded_uri
 })
+
+const fn2 = () => {
+    const cache = {};
+    return function (a, b){
+        if (cache[`${a}${b}`]) {
+            return cache[`${a}${b}`];
+        }
+        console.log('calculating.......');
+        const val = a + b;
+        cache[`${a}${b}`] = val;
+        return val;
+    }
+
+}
+const fn = fn2();
+console.log('alok99 ->>>', fn(2, 3));
+console.log('alok99 ->>>', fn(2, 3));
+
+class Bike {
+    constructor(name, color) {
+        this.name = name;
+        this.color = color;
+    }
+    getDetails() {
+        console.log(`This bike ${this.name} has color ${this.color} , is it good ?`);
+    }
+}
+
+
+const bk = new Bike('hero honda', 'redgreen');
+bk.getDetails()
