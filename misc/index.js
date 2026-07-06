@@ -127,7 +127,7 @@ console.log({
 
 const fn2 = () => {
     const cache = {};
-    return function (a, b){
+    return function (a, b) {
         if (cache[`${a}${b}`]) {
             return cache[`${a}${b}`];
         }
@@ -155,3 +155,34 @@ class Bike {
 
 const bk = new Bike('hero honda', 'redgreen');
 bk.getDetails()
+
+const parr = [1, 2, 3];
+
+if (!Array.prototype.myMap) {
+    Array.prototype.myMap = function (callback) {
+        let result = [];
+
+        for (let i = 0; i < this.length; i++) {
+            result.push(callback(this[i], i, this));
+        }
+        return result;
+    }
+}
+
+const pvar = parr.myMap((item, idx, tempArr) => {
+    console.log('alok->>', item, idx, tempArr);
+    return `${item * 2}-${idx}`;
+})
+
+console.log('after map ', pvar);
+
+if (!Array.prototype.myMap2) {
+    Array.prototype.myMap2 = function (callback) {
+        let result = [];
+
+        for (let i = 0; i < this.length; i++) {
+            result.push(callback(this[i], i, this));
+        }
+        return result;
+    }
+}
