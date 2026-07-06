@@ -266,3 +266,35 @@ if (!Array.prototype.myFind) {
         return undefined;
     }
 }
+
+
+function debounce(fn, delay) {
+    let timer;
+
+    return function (...args) {
+        clearInterval(timer);
+        timer = setTimeout(() => {
+            fn.apply(args);
+        }, delay)
+    }
+}
+
+function search() {
+    console.log('Searching Api...');
+}
+
+const debouncedSearch = debounce(search, 300);
+
+
+function throttle(fn, delay) {
+    let lastCall = 0;
+
+    return function (...args) {
+        const now = Date.now();
+
+        if (now - lastCall >= delay) {
+            lastCall = now;
+            fn.apply(args);
+        }
+    }
+}
